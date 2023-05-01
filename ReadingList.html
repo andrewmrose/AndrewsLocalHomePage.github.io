@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Reading List</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
+    <script>
+      $(document).ready( function () {
+        $('#reading-list').DataTable();
+      } );
+    </script>
+  </head>
+  <body>
+    <table id="reading-list" class="display">
+      <thead>
+        <tr>
+          <th>Book Title</th>
+          <th>Author</th>
+          <th>Start Date</th>
+          <th>Finish Date</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>The Great Gatsby</td>
+          <td>F. Scott Fitzgerald</td>
+          <td>2022-01-01</td>
+          <td>2022-01-10</td>
+          <td>---</td>
+        </tr>
+        <tr>
+          <td>To Kill a Mockingbird</td>
+          <td>Harper Lee</td>
+          <td>2022-01-15</td>
+          <td>2022-01-25</td>
+          <td>---</td>
+        </tr>
+        <tr>
+          <td>1984</td>
+          <td>George Orwell</td>
+          <td>2022-02-01</td>
+          <td>2022-02-12</td>
+          <td>---</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

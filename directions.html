@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Travel Time Widget</title>
+  </head>
+  <body>
+    <h1>Travel Time Widget</h1>
+    <h2>The Mount <span id="commute1"></span></h2>
+ 
+
+    <h2>QEH <span id="commute2"></span></h2>
+
+
+    <script>
+      function getTravelTime(origin, destination, id) {
+        const url = `https://api.openrouteservice.org/v2/directions/driving-car?api_key=${API_KEY}&start=${origin}&end=${destination}`;
+        fetch(url)
+          .then((response) => response.json())
+          .then((data) => {
+            const travelTime = data.features[0].properties.segments[0].duration;
+            document.getElementById(id).innerHTML = `${(travelTime / 60).toFixed(2)} minutes`;
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
+      }
+
+      const API_KEY = '5b3ce3597851110001cf624842fbc5c821704079ac085ebd10398b3d';
+
+      const home = '-63.146175875539434,46.243112391702596';
+      const work = '-63.13525929683719,46.260115678616046';
+      const school = '-63.1001085416218,46.255940409761926';
+
+      getTravelTime(home, work, 'commute1');
+      getTravelTime(home, school, 'commute2');
+    </script>
+  </body>
+</html>
